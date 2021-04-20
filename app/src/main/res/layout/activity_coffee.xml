@@ -87,10 +87,11 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/placeOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
+        android:text="@string/place_order_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -105,4 +106,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/placeOrder"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        tools:layout_editor_absoluteX="51dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/coffeeSubtotal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="@string/subtotal_hint_text" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,11 +10,17 @@
     <string name="currentOrder_picture">Current Order Picture (PNG)</string>
     <string name="storeOrder_picture">Store Order Picture (PNG)</string>
     <string name="cofee_activity_label">Order your Coffee here!</string>
+    <string name="donut_activity_label">Choose donut flavor below!!</string>
     <string name="cream">Cream</string>
     <string name="caramel">Caramel</string>
     <string name="syrup">Syrup</string>
     <string name="whipped_cream">Whipped Cream</string>
     <string name="milk">Milk</string>
+    <string name="subtotal_hint_text">Subtotal for order:</string>
+    <string name="place_order_button">Place Order</string>
+    <string name="current_order_label">Your current order!</string>
+    <string name="remove_order_text">Remove Order</string>
+    <string name="store_order_label">All of the store orders!</string>
     <string-array name="quantity">
         <item>1</item>
         <item>2</item>

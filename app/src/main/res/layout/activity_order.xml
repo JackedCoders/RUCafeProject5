@@ -6,4 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="192dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/currentOrder_picture"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/currentorderproject5" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="193dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/current_order_label"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ListView
+        android:id="@+id/currentOrder"
+        android:layout_width="399dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remove_order_text"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="683dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/place_order_button"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="683dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
