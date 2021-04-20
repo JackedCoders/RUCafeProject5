@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">RUCafeProject5</string>
+    <string name="main_activity_title">Welcome to RU Cafe!!</string>
+    <string name="donut_button_content_description">Donut Button</string>
+    <string name="coffee_button_content_description">Coffee Button</string>
+    <string name="current_button_content_description">Current Order Button</string>
+    <string name="store_button_content_description">Store Order Button</string>
+    <string name="coffee_picture">Coffee Picture (PNG)</string>
+    <string name="donut_picture">Donut Picture (PNG)</string>
+    <string name="currentOrder_picture">Current Order Picture (PNG)</string>
+    <string name="storeOrder_picture">Store Order Picture (PNG)</string>
+    <string name="cofee_activity_label">Order your Coffee here!</string>
+    <string name="cream">Cream</string>
+    <string name="caramel">Caramel</string>
+    <string name="syrup">Syrup</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="milk">Milk</string>
+    <string-array name="quantity">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="size">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
 </resources>

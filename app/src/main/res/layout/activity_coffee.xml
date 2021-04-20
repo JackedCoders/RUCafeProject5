@@ -6,4 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".CoffeeActivity">
 
+    <CheckBox
+        android:id="@+id/cream"
+        android:layout_width="101dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/cream"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/syrup"
+        android:layout_width="107dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/syrup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/milk"
+        android:layout_width="112dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/milk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caramel" />
+
+    <CheckBox
+        android:id="@+id/whippedCream"
+        android:layout_width="111dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/whipped_cream"
+        app:layout_constraintEnd_toStartOf="@+id/milk"
+        app:layout_constraintTop_toBottomOf="@+id/caramel" />
+
+    <CheckBox
+        android:id="@+id/caramel"
+        android:layout_width="114dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/caramel"
+        app:layout_constraintStart_toEndOf="@+id/cream"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="192dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/coffee_picture"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cofeeproject5" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="321dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whippedCream" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="320dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/cofee_activity_label"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
