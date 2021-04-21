@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/coffeeButtonMainActivity"
+        android:id="@+id/coffee"
         android:layout_width="157dp"
         android:layout_height="141dp"
         android:layout_marginTop="40dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/cofeeproject5" />
 
     <ImageButton
-        android:id="@+id/donutButtonMainActivity"
+        android:id="@+id/donut"
         android:layout_width="152dp"
         android:layout_height="140dp"
         android:layout_marginTop="40dp"
@@ -29,12 +29,12 @@
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toEndOf="@+id/coffeeButtonMainActivity"
+        app:layout_constraintStart_toEndOf="@+id/coffee"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/donutproject5" />
 
     <ImageButton
-        android:id="@+id/currentOrderButton"
+        android:id="@+id/shoppingCart"
         android:layout_width="162dp"
         android:layout_height="142dp"
         android:layout_marginStart="32dp"
@@ -42,11 +42,11 @@
         android:contentDescription="@string/current_button_content_description"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coffeeButtonMainActivity"
+        app:layout_constraintTop_toBottomOf="@+id/coffee"
         app:srcCompat="@drawable/currentorderproject5" />
 
     <ImageButton
-        android:id="@+id/storeOrderButton"
+        android:id="@+id/shoppingBag"
         android:layout_width="158dp"
         android:layout_height="140dp"
         android:layout_marginTop="40dp"
@@ -54,7 +54,7 @@
         android:contentDescription="@string/store_button_content_description"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donutButtonMainActivity"
+        app:layout_constraintTop_toBottomOf="@+id/donut"
         app:srcCompat="@drawable/storeorderproject5" />
 
     <TextView

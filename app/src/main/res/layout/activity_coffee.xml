@@ -7,7 +7,7 @@
     tools:context=".CoffeeActivity">
 
     <CheckBox
-        android:id="@+id/cream"
+        android:id="@+id/creamCheckBox"
         android:layout_width="101dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <CheckBox
-        android:id="@+id/syrup"
+        android:id="@+id/syrupCheckBox"
         android:layout_width="107dp"
         android:layout_height="46dp"
         android:layout_marginTop="32dp"
@@ -27,33 +27,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <CheckBox
-        android:id="@+id/milk"
+        android:id="@+id/milkCheckBox"
         android:layout_width="112dp"
         android:layout_height="53dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="80dp"
         android:text="@string/milk"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caramel" />
+        app:layout_constraintTop_toBottomOf="@+id/caramelCheckBox" />
 
     <CheckBox
-        android:id="@+id/whippedCream"
+        android:id="@+id/whippedCreamCb"
         android:layout_width="111dp"
         android:layout_height="53dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="28dp"
         android:text="@string/whipped_cream"
-        app:layout_constraintEnd_toStartOf="@+id/milk"
-        app:layout_constraintTop_toBottomOf="@+id/caramel" />
+        app:layout_constraintEnd_toStartOf="@+id/milkCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/caramelCheckBox" />
 
     <CheckBox
-        android:id="@+id/caramel"
+        android:id="@+id/caramelCheckBox"
         android:layout_width="114dp"
         android:layout_height="52dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:text="@string/caramel"
-        app:layout_constraintStart_toEndOf="@+id/cream"
+        app:layout_constraintStart_toEndOf="@+id/creamCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ImageView
@@ -75,7 +75,7 @@
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/whippedCream" />
+        app:layout_constraintTop_toBottomOf="@+id/whippedCreamCb" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Button
-        android:id="@+id/placeOrder"
+        android:id="@+id/coffeeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
@@ -110,12 +110,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/placeOrder"
+        app:layout_constraintBottom_toTopOf="@+id/coffeeButton"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
         tools:layout_editor_absoluteX="51dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/coffeeSubtotal"
+            android:id="@+id/coffeetotal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="@string/subtotal_hint_text" />
