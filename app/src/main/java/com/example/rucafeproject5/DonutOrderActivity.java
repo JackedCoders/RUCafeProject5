@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ *
+ * @author Manveer Singh, Prasidh Sriram
+ */
 public class DonutOrderActivity extends AppCompatActivity {
 
     @Override

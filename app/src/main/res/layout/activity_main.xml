@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <ImageButton
         android:id="@+id/coffee"
         android:layout_width="157dp"
         android:layout_height="141dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="68dp"
         android:contentDescription="@string/coffee_button_content_description"
         android:scaleType="fitCenter"
         android:visibility="visible"
@@ -21,24 +21,11 @@
         app:srcCompat="@drawable/cofeeproject5" />
 
     <ImageButton
-        android:id="@+id/donut"
-        android:layout_width="152dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="40dp"
-        android:contentDescription="@string/donut_button_content_description"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toEndOf="@+id/coffee"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/donutproject5" />
-
-    <ImageButton
         android:id="@+id/shoppingCart"
         android:layout_width="162dp"
         android:layout_height="142dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:contentDescription="@string/current_button_content_description"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,13 +36,26 @@
         android:id="@+id/shoppingBag"
         android:layout_width="158dp"
         android:layout_height="140dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="28dp"
         android:contentDescription="@string/store_button_content_description"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donut"
         app:srcCompat="@drawable/storeorderproject5" />
+
+    <ImageButton
+        android:id="@+id/donut"
+        android:layout_width="152dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="68dp"
+        android:contentDescription="@string/donut_button_content_description"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/coffee"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/donutproject5" />
 
     <TextView
         android:id="@+id/textView"
