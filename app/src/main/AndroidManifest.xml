@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RUCafeProject5">
-        <activity android:name=".StoreActivity"></activity>
+        <activity android:name=".DonutOrderActivity"></activity>
+        <activity android:name=".StoreActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".CoffeeActivity" />
         <activity android:name=".DonutActivity" />

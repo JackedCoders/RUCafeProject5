@@ -21,6 +21,12 @@
     <string name="current_order_label">Your current order!</string>
     <string name="remove_order_text">Remove Order</string>
     <string name="store_order_label">All of the store orders!</string>
+    <string name="total_order_text">Total: </string>
+    <string name="sales_tax_activity_order">Sales Tax: </string>
+    <string name="subtotal_activity_order">Subtotal: </string>
+    <string name="total_activity_order">Total: </string>
+    <string name="choose_donut_quantity">Choose the quantity and hit Place Order please</string>
+    <string name="blank"> </string>
     <string-array name="quantity">
         <item>1</item>
         <item>2</item>
