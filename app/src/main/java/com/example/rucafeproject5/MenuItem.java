@@ -6,20 +6,27 @@ package com.example.rucafeproject5;
  * @author Manveer Singh, Prasidh Sriram
  */
 public class MenuItem {
-
     private double itemprice;
 
-
+    /**
+     *
+     */
     public void itemPrice() {
 
     }
 
-
+    /**
+     *
+     * @return
+     */
     public double getItemPrice() {
         return itemprice;
     }
 
-
+    /**
+     *
+     * @param price
+     */
     public void setItemPrice(double price) {
         itemprice = price;
     }

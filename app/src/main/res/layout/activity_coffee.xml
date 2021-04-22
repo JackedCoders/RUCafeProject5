@@ -121,7 +121,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/coffeetotal"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:hint="@string/subtotal_hint_text" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

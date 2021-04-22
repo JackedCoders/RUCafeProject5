@@ -43,17 +43,27 @@ public class OrderActivity extends AppCompatActivity {
         return String.format("%.02f", val);
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getValue() {
         String total = finalTotal.getText().toString();
         return total;
     }
 
-
+    /**
+     *
+     * @param order
+     */
     public void setOrder(Order order) {
         orderObj = order;
     }
 
-
+    /**
+     *
+     * @param storeOrder
+     */
     public void setStoreOrder(StoreOrders storeOrder) {
         storeOrderObj = storeOrder;
     }
@@ -107,7 +117,6 @@ public class OrderActivity extends AppCompatActivity {
         });
 
         placeCurrentOrder.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 toast = Toast.makeText(OrderActivity.this, "Order Placed!", Toast.LENGTH_SHORT);

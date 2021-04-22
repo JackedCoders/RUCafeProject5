@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /**
-     *
-     * @param savedInstanceState
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +61,6 @@ public class MainActivity extends AppCompatActivity {
         currentOrderActivity = (ImageButton) findViewById(R.id.shoppingCart);
 
         donutActivity.setOnClickListener(new View.OnClickListener(){
-            /**
-             *
-             * @param view
-             */
             @Override
             public void onClick(View view){
                 openDonutActivity();
@@ -76,10 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         coffeeActivity.setOnClickListener(new View.OnClickListener(){
-            /**
-             *
-             * @param view
-             */
             @Override
             public void onClick(View view){
                 openCoffeeActivity();
@@ -87,10 +75,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         storeOrderActivity.setOnClickListener(new View.OnClickListener(){
-            /**
-             *
-             * @param view
-             */
             @Override
             public void onClick(View view){
                 openStoreOrderActivity();
@@ -98,10 +82,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         currentOrderActivity.setOnClickListener(new View.OnClickListener(){
-            /**
-             *
-             * @param view
-             */
             @Override
             public void onClick(View view){
                 openCartActivity();

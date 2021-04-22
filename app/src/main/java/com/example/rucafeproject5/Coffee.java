@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * order GUI at the end of placing orders.
  * @author Manveer Singh, Prasidh Sriram
  */
-
 public class Coffee extends MenuItem implements Customizable {
 
     private static final double TALL = 0.50;
@@ -23,6 +22,10 @@ public class Coffee extends MenuItem implements Customizable {
     private boolean syrup;
     private boolean caramel;
 
+    /**
+     *
+     * @param coffee
+     */
     public Coffee(Coffee coffee) {
         size  = new String(coffee.getSize());
         quantity = new String(coffee.getQuantity());
@@ -33,11 +36,20 @@ public class Coffee extends MenuItem implements Customizable {
         caramel = coffee.getCaramel();
     }
 
+    /**
+     *
+     * @param size
+     * @param quantity
+     */
     public Coffee(String size, String quantity) {
         this.size = size;
         this.quantity = quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         String result = "Coffee (" + quantity + "), " + size + " (";
@@ -63,6 +75,9 @@ public class Coffee extends MenuItem implements Customizable {
         return result;
     }
 
+    /**
+     *
+     */
     @Override
     public void itemPrice() {
         double totalPrice = 1.99;
@@ -96,6 +111,11 @@ public class Coffee extends MenuItem implements Customizable {
         setItemPrice(totalPrice * Integer.parseInt(quantity));
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean add(Object obj) {
         if (obj instanceof String) {
@@ -118,6 +138,11 @@ public class Coffee extends MenuItem implements Customizable {
         return true;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean remove(Object obj) {
         if (obj instanceof String) {
@@ -140,41 +165,74 @@ public class Coffee extends MenuItem implements Customizable {
         return true;
     }
 
+    /**
+     *
+     * @param size
+     */
     public void changeSize(String size) {
         this.size = size;
     }
 
+    /**
+     *
+     * @param quantity
+     */
     public void changeQuantity(String quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSize() {
         return size;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getQuantity() {
         return quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getMilk() {
         return milk;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public boolean getCream() {
         return cream;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getWhippedCream() {
         return whippedCream;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public boolean getSyrup() {
         return syrup;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public boolean getCaramel() {
         return caramel;
     }

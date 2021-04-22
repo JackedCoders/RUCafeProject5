@@ -2,11 +2,13 @@ package com.example.rucafeproject5;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Manveer Singh, Prasidh Sriram
+ */
 public class StoreOrders implements Customizable {
 
     public ArrayList<Order> allOrders = new ArrayList<Order>();
-
-
     /**
      * Once the coffee or donut orders are placed, return true.
      * A new order is initialized and added to the overall order list

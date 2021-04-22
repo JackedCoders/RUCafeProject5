@@ -21,6 +21,10 @@ public class DonutActivity extends AppCompatActivity {
     ArrayList<String> arrayList = new ArrayList<>();
     public static final String SEND_MESSAGE = "com.example.rucafeproject5.extra.MESSAGE";
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,6 @@ public class DonutActivity extends AppCompatActivity {
         arrayList.add("Blueberry");
         arrayList.add("Boston Cream");
         listView = (ListView) findViewById(R.id.donutListView);
-
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

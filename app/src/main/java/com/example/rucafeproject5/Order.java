@@ -9,14 +9,25 @@ import java.util.ArrayList;
  */
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Manveer Singh, Prasidh Sriram
+ */
 public class Order implements Customizable {
 
     private ArrayList<MenuItem> items = new ArrayList<MenuItem>();
 
+    /**
+     *
+     */
     public Order() {
 
     }
 
+    /**
+     *
+     * @param order
+     */
     public Order(Order order) {
         for (MenuItem item : order.getItems()) {
             if (item instanceof Donut) {
@@ -30,6 +41,11 @@ public class Order implements Customizable {
         }
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean add(Object obj) {
         if (obj instanceof MenuItem) {
@@ -39,6 +55,11 @@ public class Order implements Customizable {
         return false;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean remove(Object obj) {
         if (obj instanceof String) {
@@ -52,6 +73,10 @@ public class Order implements Customizable {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<MenuItem> getItems() {
         return items;
     }

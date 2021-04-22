@@ -37,20 +37,15 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
         return quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getValue() {
         String finalTotal = String.valueOf(total);
         return finalTotal;
     }
 
-    public static String coffeeInfo() {
-        String result = "";
-        if (caramel.isChecked() || whippedCream.isChecked() || cream.isChecked() || milk.isChecked() || syrup.isChecked()) {
-            result = "Coffee Size: " + text + ", Quantity: " + getQuantity() + ", Add Ons: Selected";
-        } else if (!caramel.isChecked() || !whippedCream.isChecked() || !cream.isChecked() || !milk.isChecked() || !syrup.isChecked()) {
-            result = "Coffee Size: " + text + ", Quantity: " + getQuantity() + ", Add Ons: None";
-        }
-        return result;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,7 +161,6 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
                 OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
                 OrderActivity.arrayList.add(coffee.toString());
-                StoreActivity.storeList.add(CoffeeActivity.coffeeInfo());
 
                 orderObj.add(coffee);
             }
@@ -242,9 +236,15 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
     }
 
+    /**
+     *
+     * @param val
+     * @return
+     */
     public String twoDecimalPlaces(double val){
         return String.format("%.02f", val);
     }
+
     /**
      *
      */

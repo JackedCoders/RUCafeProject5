@@ -30,18 +30,24 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
     private Donut donut = new Donut("Glazed", "1");
     public static Order orderObj = new Order();
 
+    /**
+     *
+     * @param val
+     * @return
+     */
     public String twoDecimalPoints(double val) {
         return String.format("%.02f", val);
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getValue() {
         String finalTotal = donutTotal.getText().toString();
         return finalTotal;
     }
 
-    public static String donutInfo() {
-        return "Donut Type: " + donutName.getText() + ", " +  "Quantity: " + donutCount;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +68,7 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
         placeOrder = (Button) findViewById(R.id.placeDonutOrder);
         placeOrder.setOnClickListener(new View.OnClickListener() {
             /**
-             * Once the user selects the "Place Order" button, a confirmation toast appears
-             * The total price based on the quantity of the donut is added to the subtotal in the Order Activity
-             * The current donut and its quantity is also added into the Order Activity array list
+             *
              * @param view
              */
             @Override
@@ -80,12 +84,18 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
 
                 OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
                 OrderActivity.arrayList.add(donut.toString());
-                StoreActivity.storeList.add(DonutOrderActivity.donutInfo());
             }
         });
 
     }
 
+    /**
+     *
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         donutCount = parent.getItemAtPosition(position).toString();
@@ -97,6 +107,10 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
         donutTotal.setText(twoDecimalPoints(total));
     }
 
+    /**
+     *
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         donutTotal.setText(twoDecimalPoints(0.00));
