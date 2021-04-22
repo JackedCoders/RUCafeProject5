@@ -7,24 +7,20 @@ package com.example.rucafeproject5;
  */
 public class MenuItem {
 
-    protected double itemPrice;
+    private double itemprice;
 
-    /**
-     * method that takes in a double parameter called itemPrice and assigns it to our private instance variable
-     * itemPrice
-     * @param itemPrice
-     */
-    public void itemPrice(double itemPrice){
-        this.itemPrice = itemPrice;
+
+    public void itemPrice() {
+
     }
 
-    /**
-     * getter method that returns the protected instance variable itemPrice of this class
-     * when called in other classes
-     * @return itemPrice
-     */
-    public double getItemPrice(){
-        return this.itemPrice;
+
+    public double getItemPrice() {
+        return itemprice;
     }
 
+
+    public void setItemPrice(double price) {
+        itemprice = price;
+    }
 }

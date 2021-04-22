@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/caramelCheckBox" />
 
     <CheckBox
-        android:id="@+id/whippedCreamCb"
+        android:id="@+id/whippedCreamCB"
         android:layout_width="111dp"
         android:layout_height="53dp"
         android:layout_marginTop="4dp"
@@ -115,7 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/whippedCreamCb"
+        app:layout_constraintTop_toBottomOf="@+id/whippedCreamCB"
         tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.textfield.TextInputEditText

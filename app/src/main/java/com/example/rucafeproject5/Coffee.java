@@ -8,98 +8,174 @@ import java.util.ArrayList;
  * order GUI at the end of placing orders.
  * @author Manveer Singh, Prasidh Sriram
  */
-public class Coffee extends MenuItem implements Customizable{
-    final double COST_PER_ADDIN = 0.20;
-    final double SHORT_COFFEE_PRICE = 1.99;
-    final double TALL_COFFEE_PRICE = 2.49;
-    final double GRANDE_COFFEE_PRICE = 2.99;
-    final double VENTI_COFFEE_PRICE = 3.49;
-    public static int quantityKeepTrack; //to be able to set it in other controllers and display in toString
-    public static final int SHORT_COFFEE = 0;
-    public static final int TALL_COFFEE = 1;
-    public static final int GRANDE_COFFEE = 2;
-    public static final int VENTI_COFFEE = 3;
-    protected ArrayList<String> addIn = new ArrayList<>();
-    private String nameOfSize;
 
-    /**
-     * sets the name of the coffee to be added to the String
-     * @param nameOfSize
-     */
-    public void setNameOfSize(String nameOfSize) {
-        this.nameOfSize = nameOfSize;
+public class Coffee extends MenuItem implements Customizable {
+
+    private static final double TALL = 0.50;
+    private static final double GRANDE = 1.00;
+    private static final double VENTI = 1.50;
+    private static final double ADD_IN_PRICE = 0.20;
+    private String size;
+    private String quantity;
+    private boolean milk;
+    private boolean cream;
+    private boolean whippedCream;
+    private boolean syrup;
+    private boolean caramel;
+
+    public Coffee(Coffee coffee) {
+        size  = new String(coffee.getSize());
+        quantity = new String(coffee.getQuantity());
+        milk = coffee.getMilk();
+        cream = coffee.getCream();
+        whippedCream = coffee.getWhippedCream();
+        syrup = coffee.getSyrup();
+        caramel = coffee.getCaramel();
     }
 
-    public String getNameOfSize() {
-        return nameOfSize;
+    public Coffee(String size, String quantity) {
+        this.size = size;
+        this.quantity = quantity;
     }
-    /**
-     * Constructor of this class that allows for identification of coffee prices and type based on the integer assigned
-     * 0 for short, 1 for tall, 2 for grande, 3 for venti
-     * @param sizeOfCoffee is the integer that gets passed in and used to assign values
-     */
-    public Coffee(int sizeOfCoffee){
-        if(sizeOfCoffee == SHORT_COFFEE){
-            super.itemPrice = SHORT_COFFEE_PRICE;
-            this.nameOfSize = "Short Size";
-        }else if(sizeOfCoffee ==TALL_COFFEE){
-            super.itemPrice = TALL_COFFEE_PRICE;
-            this.nameOfSize= "Tall Size";
-        }else if(sizeOfCoffee ==GRANDE_COFFEE){
-            super.itemPrice = GRANDE_COFFEE_PRICE;
-            this.nameOfSize = "Grande Size";
-        }else if(sizeOfCoffee == VENTI_COFFEE){
-            super.itemPrice = VENTI_COFFEE_PRICE;
-            this.nameOfSize = "Venti Size";
+
+    @Override
+    public String toString() {
+        String result = "Coffee (" + quantity + "), " + size + " (";
+
+        if (milk == true) {
+            result += "Milk, ";
         }
+        if (cream == true) {
+            result += "Cream, ";
+        }
+        if (whippedCream == true) {
+            result += "Whipped Cream, ";
+        }
+        if (syrup == true) {
+            result += "Syrup, ";
+        }
+        if (caramel == true) {
+            result += "Caramel, ";
+        } else {
+            result += "None ";
+        }
+        result += ")";
+        return result;
     }
 
-    /**
-     * Constructor that creates a new object based
-     * @param c
-     */
-    public Coffee(Coffee c){
-
-
-    }
-    /**
-     * getter method to return itemPrice from MenuItem.java
-     * @return returns the contents of getItemPrice() method in our super class MenuItem
-     */
-    public double itemPrice(){
-        return super.getItemPrice();
-    }
-
-    /**
-     * Adds any addins that we might have for our coffee order.
-     * Notice that this method also overrides the add method in customizable interface
-     * @param obj name of the add-in
-     * @return
-     */
     @Override
-    public boolean add(Object obj){
-        super.itemPrice = itemPrice + COST_PER_ADDIN;
-        return false;
+    public void itemPrice() {
+        double totalPrice = 1.99;
+        if (size.equals("Short")) {
+            totalPrice += 0;
+        }
+        if (size.equals("Tall")) {
+            totalPrice += TALL;
+        }
+        if (size.equals("Grande")) {
+            totalPrice += GRANDE;
+        }
+        if (size.equals("Venti")) {
+            totalPrice += VENTI;
+        }
+        if (milk == true) {
+            totalPrice += ADD_IN_PRICE;
+        }
+        if (cream == true) {
+            totalPrice += ADD_IN_PRICE;
+        }
+        if (syrup == true) {
+            totalPrice += ADD_IN_PRICE;
+        }
+        if (caramel == true) {
+            totalPrice += ADD_IN_PRICE;
+        }
+        if (whippedCream == true) {
+            totalPrice += ADD_IN_PRICE;
+        }
+        setItemPrice(totalPrice * Integer.parseInt(quantity));
     }
 
-    /**
-     * toString method that prints a short description of the coffee order so far
-     * @return string concatenated with Price, quantity and quantity
-     */
-    public String toString(){
-        String out = "Coffee Size " + this.nameOfSize + "( " +this.quantityKeepTrack + " )" + "$ " + this.itemPrice;
-        return out;
-    }
-
-    /**
-     * Removes any addins from the coffee object and overrides the remove method in
-     * customizable interface
-     * @param obj
-     * @return name of the add-in
-     */
     @Override
-    public boolean remove(Object obj){
-        super.itemPrice = itemPrice - COST_PER_ADDIN;
-        return false;
+    public boolean add(Object obj) {
+        if (obj instanceof String) {
+            if (obj.equals("Cream")) {
+                cream = true;
+            }
+            if (obj.equals("Syrup")) {
+                syrup = true;
+            }
+            if (obj.equals("Whipped Cream")) {
+                whippedCream = true;
+            }
+            if (obj.equals("Caramel")) {
+                caramel = true;
+            }
+            if (obj.equals("Milk")) {
+                milk = true;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean remove(Object obj) {
+        if (obj instanceof String) {
+            if (obj.equals("Cream")) {
+                cream = false;
+            }
+            if (obj.equals("Syrup")) {
+                syrup = false;
+            }
+            if (obj.equals("Whipped Cream")) {
+                whippedCream = false;
+            }
+            if (obj.equals("Caramel")) {
+                caramel = false;
+            }
+            if (obj.equals("Milk")) {
+                milk = false;
+            }
+        }
+        return true;
+    }
+
+    public void changeSize(String size) {
+        this.size = size;
+    }
+
+    public void changeQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public boolean getMilk() {
+        return milk;
+    }
+
+
+    public boolean getCream() {
+        return cream;
+    }
+
+    public boolean getWhippedCream() {
+        return whippedCream;
+    }
+
+
+    public boolean getSyrup() {
+        return syrup;
+    }
+
+
+    public boolean getCaramel() {
+        return caramel;
     }
 }
