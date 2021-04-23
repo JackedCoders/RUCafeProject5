@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RUCafeProject5</string>
-    <string name="main_activity_title">Welcome to RU Cafe!!</string>
+    <string name="main_activity_text">Welcome to RU Cafe!!</string>
     <string name="donut_button_content_description">Donut Button</string>
     <string name="coffee_button_content_description">Coffee Button</string>
     <string name="current_button_content_description">Current Order Button</string>
@@ -27,6 +27,14 @@
     <string name="total_activity_order">Total: </string>
     <string name="choose_donut_quantity">Choose the quantity and hit Place Order please</string>
     <string name="blank"> </string>
+    <string name="coffee_explanation">Please select quantity first, then size and select add ons last.</string>
+    <string name="donut_activity_title">Order Donut(s)</string>
+    <string name="coffee_activity_title">Order Coffee(s)</string>
+    <string name="order_activity_title">View Shopping Cart</string>
+    <string name="store_order_activity_title">View All Orders</string>
+    <string name="donut_order_activity_title">Select Donut(s) Quantity</string>
+    <string name="main_activity_title">Select Donut(s) Quantity</string>
+    <string name="reset_button_text">RESET ALL</string>
     <string-array name="quantity">
         <item>1</item>
         <item>2</item>

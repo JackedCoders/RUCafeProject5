@@ -14,23 +14,27 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 /**
- *
+ * Activity class that directly controls our activity_coffee activity (.xml) file and has
+ * all of the functionality of ordering coffee (quantity, size and any addOns requested by the user). This class
+ * sets the onCreate and onClick functioalities for several components in our class (buttons, checkboxes, and has
+ * a few getter methods as well).
  * @author Manveer Singh, Prasidh Sriram
  */
 public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private final static double ADD_ON_PRICE = 0.20; //fixed
-    private static CheckBox milk, caramel, syrup, whippedCream, cream;
-    private static TextInputEditText coffeeSubtotal;
-    private static Spinner spinner, spinner2;
     private Button placeOrder;
     private static String text;
     private static double total = 1.99;
     private Coffee coffee = new Coffee("Short", "1");
     public static Order orderObj = new Order();
+    private final static double ADD_ON_PRICE = 0.20; //fixed value
+    private static CheckBox milk, caramel, syrup, whippedCream, cream;
+    private static TextInputEditText coffeeSubtotal;
+    private static Spinner spinner, spinner2;
+
 
     /**
-     *
-     * @return
+     * Getter method that returns the quantity chosen by the user using the spinner drop down list
+     * @return quantity int selected by the user
      */
     public static int getQuantity() {
         int quantity = Integer.parseInt(spinner.getSelectedItem().toString());
@@ -38,19 +42,24 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     /**
-     *
-     * @return
+     * Method that returns the type casted string version of total so it can be used in text fields
+     * @return total of default coffee order in type string
      */
     public static String getValue() {
         String finalTotal = String.valueOf(total);
         return finalTotal;
     }
 
-
+    /**
+     * This method initializes our type Button, Checkbox, TextinputEditText variables to the ID of those in the activity_coffee.xml file,
+     * populates the spinners with quantity, size, and implements functionality of each event
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
+
         //set IDs now to all of our instances
         cream = (CheckBox) findViewById(R.id.creamCheckBox);
         whippedCream = (CheckBox) findViewById(R.id.whippedCreamCB);
@@ -59,14 +68,15 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
         caramel = (CheckBox) findViewById(R.id.caramelCheckBox);
         coffeeSubtotal = (TextInputEditText) findViewById(R.id.coffeetotal);
         placeOrder = (Button) findViewById(R.id.coffeeButton);
+
         //populate the quantity of coffee from strings.xml
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.quantity, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        //populate the sizes of Coffee from strings.xml
 
+        //populate the sizes of Coffee from strings.xml
         spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.size, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -74,10 +84,13 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
         spinner2.setOnItemSelectedListener(this);
 
 
+
         //check boxes on click listeners first here
         whippedCream.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * If whipped cream checkbox is selected, add the price to total, if not subtract
+             * also adds the object coffee using the add method and then updates the subtotal textview
+             * with the current total price
              * @param view
              */
             @Override
@@ -95,7 +108,9 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
         cream.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * If cream checkbox is selected, add the price to total, if not subtract
+             * also adds the object coffee using the add method and then updates the subtotal textview
+             * with the current total price
              * @param view
              */
             @Override
@@ -113,7 +128,9 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
         syrup.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * If syrup checkbox is selected, add the price to total, if not subtract
+             * also adds the object coffee using the add method and then updates the subtotal textview
+             * with the current total price
              * @param view
              */
             @Override
@@ -131,7 +148,9 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
         caramel.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * If caramel checkbox is selected, add the price to total, if not subtract
+             * also adds the object coffee using the add method and then updates the subtotal textview
+             * with the current total price
              * @param view
              */
             @Override
@@ -149,26 +168,26 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
         placeOrder.setOnClickListener(new View.OnClickListener() {
             /**
-             * Once the "Place Order" button is selected, a toast appears to confirm the order placed
-             * The subtotal in the Order Activity is updated with the coffee price
-             * The array list adds the coffee order information
+             * Places the order from coffee to current order activity along with
+             * showing a toast message confirming the order
              * @param view
              */
             @Override
             public void onClick(View view) {
+                OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
+                OrderActivity.arrayList.add(coffee.toString());
+                orderObj.add(coffee);
                 Toast toast = Toast.makeText(CoffeeActivity.this, "Order Placed!", Toast.LENGTH_SHORT);
                 toast.show();
 
-                OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
-                OrderActivity.arrayList.add(coffee.toString());
-
-                orderObj.add(coffee);
             }
         });
 
         milk.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * If milk checkbox is selected, add the price to total, if not subtract
+             * also adds the object coffee using the add method and then updates the subtotal textview
+             * with the current total price
              * @param view
              */
             @Override
@@ -186,10 +205,10 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
 
     }
 
-
-
     /**
-     *
+     * Method that calculates the price for coffee based on its size, quantity and makes several calls to
+     * methods implemented in our coffee class. Everytime a size is selected, a toast message is displayed on the screen
+     * as well. Along with calculating the right price, we also assign it to the subtotal coffee textView here.
      * @param parent
      * @param view
      * @param position
@@ -233,20 +252,21 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             helpClearCheckboxes();
             coffeeSubtotal.setText(twoDecimalPlaces(total));
         }
-
     }
 
     /**
-     *
-     * @param val
-     * @return
+     * Method that ensures that all of the prices in coffee are only two decimal places
+     * by using the String.format method
+     * @param val of type double that gets passed in and converted to have two demical points
+     * @return string of our paramater val to two decimal places
      */
     public String twoDecimalPlaces(double val){
         return String.format("%.02f", val);
     }
 
     /**
-     *
+     * helper method that clears our check boxes components upon called (after placing order or selecting a different
+     * coffee size)
      */
     public void helpClearCheckboxes(){
         milk.setChecked(false);
@@ -257,7 +277,8 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     /**
-     *
+     * Method that gets called when setting up the activity, if nothing is selected, this
+     * method sets our subtotal textView to 0.00 as nothing has been selected yet
      * @param parent
      */
     @Override

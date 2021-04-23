@@ -12,23 +12,50 @@ public class Donut extends MenuItem {
     private String quantity;
 
     /**
-     *
-     */
-    public Donut() {
-
-    }
-
-    /**
-     *
-     * @param donut
+     * Method to create new donut objects and set flavor and quantity using our getter methods
+     * @param donut object that gets passed to set flavor and quantity to
      */
     public Donut(Donut donut) {
         flavor = new String(donut.getFlavor());
         quantity = new String(donut.getQuantity());
     }
+    
+    /**
+     * Method that calculates the price for each time by calling the setItemPrice method
+     * in Menu item
+     */
+    @Override
+    public void itemPrice() {
+        setItemPrice(DONUT_PRICE * Integer.parseInt(quantity));
+    }
 
     /**
-     *
+     * getter method that returns our private instance variable flavor
+     * @return flavor
+     */
+    public String getFlavor() {
+        return flavor;
+    }
+
+    /**
+     * getter method that returns our private instance variable quantity
+     * @return quantity of the Donut
+     */
+    public String getQuantity() {
+        return quantity;
+    }
+    /**
+     * Empty constructor that allows us to create Donut objects
+     */
+    public Donut() {
+
+    }
+
+
+
+    /**
+     * Constructor that accepts two parameters and initializes our private instance variables
+     * flavor and quantity to the parameters
      * @param flavor
      * @param quantity
      */
@@ -38,7 +65,7 @@ public class Donut extends MenuItem {
     }
 
     /**
-     *
+     * toString method to print basic info about our donuts
      * @return
      */
     @Override
@@ -46,27 +73,5 @@ public class Donut extends MenuItem {
         return flavor + ", " + quantity;
     }
 
-    /**
-     *
-     */
-    @Override
-    public void itemPrice() {
-        setItemPrice(DONUT_PRICE * Integer.parseInt(quantity));
-    }
 
-    /**
-     *
-     * @return
-     */
-    public String getFlavor() {
-        return flavor;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getQuantity() {
-        return quantity;
-    }
 }

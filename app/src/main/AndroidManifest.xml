@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RUCafeProject5">
-        <activity android:name=".DonutOrderActivity" android:parentActivityName=".DonutActivity" android:label="Select Donut(s) Quantity" ></activity>
-        <activity android:name=".StoreActivity" android:parentActivityName=".MainActivity" android:label="View All Orders" />
-        <activity android:name=".OrderActivity" android:parentActivityName=".MainActivity" android:label="View Shopping Cart"  />
-        <activity android:name=".CoffeeActivity" android:parentActivityName=".MainActivity" android:label="Order Coffee(s)"  />
-        <activity android:name=".DonutActivity" android:parentActivityName=".MainActivity" android:label="Order Donut(s)" />
-        <activity android:name=".MainActivity" android:label="Rutgers Cafe">
+        <activity android:name=".DonutOrderActivity" android:parentActivityName=".DonutActivity" android:label="@string/donut_order_activity_title" ></activity>
+        <activity android:name=".StoreActivity" android:parentActivityName=".MainActivity" android:label="@string/store_order_activity_title" />
+        <activity android:name=".OrderActivity" android:parentActivityName=".MainActivity" android:label="@string/order_activity_title"  />
+        <activity android:name=".CoffeeActivity" android:parentActivityName=".MainActivity" android:label="@string/coffee_activity_title"/>
+        <activity android:name=".DonutActivity" android:parentActivityName=".MainActivity" android:label="@string/donut_activity_title" />
+        <activity android:name=".MainActivity" android:label="@string/main_activity_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
