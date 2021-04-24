@@ -18,6 +18,7 @@ public class Coffee extends MenuItem implements Customizable {
     private static final double GRANDE = 1.00;
     private static final double VENTI = 1.50;
     private static final double PRICE_FOR_ADD_ON = 0.20;
+
     /**
      * getter method to return the milk add on
      * @return private instance variable milk
@@ -73,8 +74,6 @@ public class Coffee extends MenuItem implements Customizable {
     public String getQuantityOfCoffee() {
         return quantityOfCoffee;
     }
-
-
 
     /**
      * getter method to return the syrup add on
@@ -173,7 +172,7 @@ public class Coffee extends MenuItem implements Customizable {
     }
 
     /**
-     * toStrig method to print coffee info to other activities
+     * toString method to print coffee info to other activities
      * @return
      */
     @Override
@@ -237,6 +236,4 @@ public class Coffee extends MenuItem implements Customizable {
         }
         set_price_of_item(sum * Integer.parseInt(quantityOfCoffee));
     }
-
-
 }

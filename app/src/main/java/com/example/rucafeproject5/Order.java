@@ -7,13 +7,6 @@ import java.util.ArrayList;
  * Class also has a toString method used to return description of orders
  * @author Manveer Singh, Prasidh Sriram
  */
-
-/**
- * Backend order class that adds and removes objects based on user input along with having the most
- * important arrayLIst of type MenuItem that holds all of the orders printed to the store orders.
- * Class also has a toString method used to return description of orders
- * @author Manveer Singh, Prasidh Sriram
- */
 public class Order implements Customizable {
 
     private ArrayList<MenuItem> all_items_in_order = new ArrayList<MenuItem>();

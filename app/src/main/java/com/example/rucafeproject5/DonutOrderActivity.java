@@ -44,16 +44,6 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
     }
 
     /**
-     * Getter method that gets the total from our TextInputEditText and then converts to a string
-     * then simply returns for usage
-     * @return string format of total value in our donutTotal TextInputEditText
-     */
-    public static String getValue() {
-        String finalTotal = donutTotal.getText().toString();
-        return finalTotal;
-    }
-
-    /**
      * Method that populates our spinner with the quantity of donuts, initializes our button, textInputEditText
      * to be used in the activity along with displaying Toast messages when order is placed and then adds the donut
      * object to be added to the shopping cart

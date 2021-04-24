@@ -68,8 +68,8 @@ public class StoreActivity extends AppCompatActivity {
 
         storeOrders.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
-             * If a certain order is selected in our listview, display a dialogue box and confirm to delete the
-             * specfic order
+             * If a certain order is selected in our list view, display a dialogue box and confirm to delete the
+             * specific order
              * @param parent
              * @param view
              * @param position

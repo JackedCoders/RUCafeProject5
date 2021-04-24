@@ -149,7 +149,7 @@ public class OrderActivity extends AppCompatActivity {
 
                 builder.setNegativeButton("Keep", new DialogInterface.OnClickListener() {
                     /**
-                     *
+                     * If clicked on keep, the dialog gets cancelled and the user continues with their order
                      * @param dialog
                      * @param which
                      */
@@ -161,7 +161,7 @@ public class OrderActivity extends AppCompatActivity {
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     /**
-                     *
+                     * if clicked on Delete, the order get deleted from the listView and the object and item price gets updated
                      */
                     public void onClick(DialogInterface dialog, int which) {
                         tempSubtotal = Double.parseDouble(currentSubtotal.getText().toString());
