@@ -12,7 +12,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- *
+ * Activity class that directly controls our activity_donut activity (.xml) file.
+ * This class uses Intent to set up the activities for different Donut flavors (Jelly,
+ * Boston Cream, Glazed, Blueberry, and Cinnamon Sugar). Whenever these are clicked in the listView
+ * a new activity is opened up to finish donut ordering
  * @author Manveer Singh, Prasidh Sriram
  */
 public class DonutActivity extends AppCompatActivity {
@@ -22,7 +25,8 @@ public class DonutActivity extends AppCompatActivity {
     public static final String SEND_MESSAGE = "com.example.rucafeproject5.extra.MESSAGE";
 
     /**
-     *
+     * Method that adds our donut flavor to the listView and then populates for user usage along with
+     * using intent to open up individual activities for donut flavors (5 of them)
      * @param savedInstanceState
      */
     @Override
@@ -39,7 +43,8 @@ public class DonutActivity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
-             *
+             * Whenever Jelly, Boston Cream, Glazed, Blueberry or Cinnamon Sugar is clicked, this onItemClick
+             * method opens up a new activity specifically for that flavor
              * @param parent
              * @param view
              * @param position

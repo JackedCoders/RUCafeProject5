@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.ImageButton;
 
 /**
- *
+ * Activity class that directly controls our activity_main.xml and has all of the functionality needed
+ * to open up all the activities throughout this project (Coffee, Donut, Current Orders and Store orders
+ * activities). Class contains 4 helper methods that each open their own activity and later on,
+ * using onClick methods, we call these methods to open out activities
  * @author Manveer Singh, Prasidh Sriram
  */
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Void method that initializes our private instance variables (donutActivity, coffeeActivity,
+     * storeOrderActivity, currentOrderActivity) to their respective image buttons and based on which one
+     * is clicked, opens activities using the helper methods above
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         storeOrderActivity = (ImageButton) findViewById(R.id.shoppingBag);
         currentOrderActivity = (ImageButton) findViewById(R.id.shoppingCart);
 
+        /**
+         * If donut image button is clicked, call its helper method and open the activity
+         */
         donutActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -67,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * If coffee image button is clicked, call its helper method and open the activity
+         */
         coffeeActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -74,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * If store order image button is clicked, call its helper method and open the activity
+         */
         storeOrderActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -81,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * If current order image button is clicked, call its helper method and open the activity
+         */
         currentOrderActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

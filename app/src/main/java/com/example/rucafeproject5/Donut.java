@@ -1,5 +1,4 @@
 package com.example.rucafeproject5;
-
 /**
  * Back end Donut class that directly handles all of the calculations, add, remove and assignments for our
  * DonutView and DonutController files. This class also has a toString that allows us to print the contents to store
@@ -19,14 +18,14 @@ public class Donut extends MenuItem {
         flavor = new String(donut.getFlavor());
         quantity = new String(donut.getQuantity());
     }
-    
+
     /**
      * Method that calculates the price for each time by calling the setItemPrice method
      * in Menu item
      */
     @Override
     public void itemPrice() {
-        setItemPrice(DONUT_PRICE * Integer.parseInt(quantity));
+        set_price_of_item(DONUT_PRICE * Integer.parseInt(quantity));
     }
 
     /**
@@ -50,8 +49,6 @@ public class Donut extends MenuItem {
     public Donut() {
 
     }
-
-
 
     /**
      * Constructor that accepts two parameters and initializes our private instance variables

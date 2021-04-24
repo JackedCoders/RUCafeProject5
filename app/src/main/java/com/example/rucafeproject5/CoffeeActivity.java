@@ -25,12 +25,11 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
     private static String text;
     private static double total = 1.99;
     private Coffee coffee = new Coffee("Short", "1");
-    public static Order orderObj = new Order();
     private final static double ADD_ON_PRICE = 0.20; //fixed value
     private static CheckBox milk, caramel, syrup, whippedCream, cream;
     private static TextInputEditText coffeeSubtotal;
     private static Spinner spinner, spinner2;
-
+    private final double default_subtotal_value = 0.00;
 
     /**
      * Getter method that returns the quantity chosen by the user using the spinner drop down list
@@ -82,8 +81,6 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
-
-
 
         //check boxes on click listeners first here
         whippedCream.setOnClickListener(new View.OnClickListener() {
@@ -174,12 +171,12 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
              */
             @Override
             public void onClick(View view) {
-                OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
+                coffee.itemPrice();
+                OrderActivity.tempSubtotal += coffee.getItemPrice() ;
                 OrderActivity.arrayList.add(coffee.toString());
-                orderObj.add(coffee);
+                DonutOrderActivity.orderObj.add(coffee);
                 Toast toast = Toast.makeText(CoffeeActivity.this, "Order Placed!", Toast.LENGTH_SHORT);
                 toast.show();
-
             }
         });
 
@@ -283,6 +280,6 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
      */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        coffeeSubtotal.setText(twoDecimalPlaces(0.00));
+        coffeeSubtotal.setText(twoDecimalPlaces(default_subtotal_value));
     }
 }

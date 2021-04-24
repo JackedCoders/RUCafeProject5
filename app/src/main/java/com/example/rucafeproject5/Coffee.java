@@ -18,6 +18,79 @@ public class Coffee extends MenuItem implements Customizable {
     private static final double GRANDE = 1.00;
     private static final double VENTI = 1.50;
     private static final double PRICE_FOR_ADD_ON = 0.20;
+    /**
+     * getter method to return the milk add on
+     * @return private instance variable milk
+     */
+    public boolean getMilk() {
+        return milk;
+    }
+
+    /**
+     * getter method to return the cream add on
+     * @return private instance variable cream
+     */
+    public boolean getCream() {
+        return cream;
+    }
+
+    /**
+     * getter method to return the whipped cream add on
+     * @return private instance variable whipped cream
+     */
+    public boolean getWhippedCream() {
+        return whippedCream;
+    }
+
+    /**
+     * Method that changes the size of the coffee to our private instance variable size to the parameter
+     * @param size
+     */
+    public void changeSize(String size) {
+        this.sizeOfCoffee = size;
+    }
+
+    /**
+     * Method that changes the quantity of the coffee ordered to the parameter being passed in
+     * @param quantity
+     */
+    public void changeQuantity(String quantity) {
+        this.quantityOfCoffee = quantity;
+    }
+
+    /**
+     * getter method to return the size of the coffee
+     * @return private instance variable size
+     */
+    public String getSizeOfCoffee() {
+        return sizeOfCoffee;
+    }
+
+    /**
+     * getter method to return the quantity of the coffee
+     * @return private instance variable quantity
+     */
+    public String getQuantityOfCoffee() {
+        return quantityOfCoffee;
+    }
+
+
+
+    /**
+     * getter method to return the syrup add on
+     * @return private instance variable syrup
+     */
+    public boolean getSyrup() {
+        return syrup;
+    }
+
+    /**
+     * getter method to return the caramel add on
+     * @return private instance variable caramel
+     */
+    public boolean getCaramel() {
+        return caramel;
+    }
 
     /**
      * Coffee constructor that sets our private instance variables size and quantity to the parameters
@@ -134,106 +207,36 @@ public class Coffee extends MenuItem implements Customizable {
      */
     @Override
     public void itemPrice() {
-        double totalPrice = 1.99;
+        double sum = 1.99;
         if (sizeOfCoffee.equals("Short")) {
-            totalPrice += 0;
+            sum += 0;
         }
         if (sizeOfCoffee.equals("Tall")) {
-            totalPrice += TALL;
+            sum += TALL;
         }
         if (sizeOfCoffee.equals("Grande")) {
-            totalPrice += GRANDE;
+            sum += GRANDE;
         }
         if (sizeOfCoffee.equals("Venti")) {
-            totalPrice += VENTI;
+            sum += VENTI;
         }
         if (milk == true) {
-            totalPrice += PRICE_FOR_ADD_ON;
+            sum += PRICE_FOR_ADD_ON;
         }
         if (cream == true) {
-            totalPrice += PRICE_FOR_ADD_ON;
+            sum += PRICE_FOR_ADD_ON;
         }
         if (syrup == true) {
-            totalPrice += PRICE_FOR_ADD_ON;
+            sum += PRICE_FOR_ADD_ON;
         }
         if (caramel == true) {
-            totalPrice += PRICE_FOR_ADD_ON;
+            sum += PRICE_FOR_ADD_ON;
         }
         if (whippedCream == true) {
-            totalPrice += PRICE_FOR_ADD_ON;
+            sum += PRICE_FOR_ADD_ON;
         }
-        setItemPrice(totalPrice * Integer.parseInt(quantityOfCoffee));
+        set_price_of_item(sum * Integer.parseInt(quantityOfCoffee));
     }
 
-    /**
-     * Method that changes the size of the coffee to our private instance variable size to the parameter
-     * @param size
-     */
-    public void changeSize(String size) {
-        this.sizeOfCoffee = size;
-    }
 
-    /**
-     * Method that changes the quantity of the coffee ordered to the parameter being passed in
-     * @param quantity
-     */
-    public void changeQuantity(String quantity) {
-        this.quantityOfCoffee = quantity;
-    }
-
-    /**
-     * getter method to return the size of the coffee
-     * @return private instance variable size
-     */
-    public String getSizeOfCoffee() {
-        return sizeOfCoffee;
-    }
-
-    /**
-     * getter method to return the quantity of the coffee
-     * @return private instance variable quantity
-     */
-    public String getQuantityOfCoffee() {
-        return quantityOfCoffee;
-    }
-
-    /**
-     * getter method to return the milk add on
-     * @return private instance variable milk
-     */
-    public boolean getMilk() {
-        return milk;
-    }
-
-    /**
-     * getter method to return the cream add on
-     * @return private instance variable cream
-     */
-    public boolean getCream() {
-        return cream;
-    }
-
-    /**
-     * getter method to return the whipped cream add on
-     * @return private instance variable whipped cream
-     */
-    public boolean getWhippedCream() {
-        return whippedCream;
-    }
-
-    /**
-     * getter method to return the syrup add on
-     * @return private instance variable syrup
-     */
-    public boolean getSyrup() {
-        return syrup;
-    }
-
-    /**
-     * getter method to return the caramel add on
-     * @return private instance variable caramel
-     */
-    public boolean getCaramel() {
-        return caramel;
-    }
 }

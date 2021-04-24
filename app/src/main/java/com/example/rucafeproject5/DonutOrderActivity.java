@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 /**
- *
+ * Activity class that directly controls our activity_donut_order.xml and has all of the functionality needed
+ * for selecting the quantity and flavors of donuts. This class calculates the total for a specific donut flavor,
+ * has a few getter methods and displays toast messages for certain actions (order is placed, donut selected etc)
  * @author Manveer Singh, Prasidh Sriram
  */
 public class DonutOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -29,26 +31,34 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
     static String donutCount;
     private Donut donut = new Donut("Glazed", "1");
     public static Order orderObj = new Order();
+    private double default_value_donuts = 0.00;
 
     /**
-     *
-     * @param val
-     * @return
+     * Method to restrict our numbers to two decimal points only as required by project description
+     * This method gets called throughout this class as a helper method
+     * @param val value to restrict to two decimal points
+     * @return string format of val
      */
     public String twoDecimalPoints(double val) {
         return String.format("%.02f", val);
     }
 
     /**
-     *
-     * @return
+     * Getter method that gets the total from our TextInputEditText and then converts to a string
+     * then simply returns for usage
+     * @return string format of total value in our donutTotal TextInputEditText
      */
     public static String getValue() {
         String finalTotal = donutTotal.getText().toString();
         return finalTotal;
     }
 
-
+    /**
+     * Method that populates our spinner with the quantity of donuts, initializes our button, textInputEditText
+     * to be used in the activity along with displaying Toast messages when order is placed and then adds the donut
+     * object to be added to the shopping cart
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,9 +76,11 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
         donutTotal = (TextInputEditText) findViewById((R.id.donutTotal));
         donutTotal.setText(twoDecimalPoints(total));
         placeOrder = (Button) findViewById(R.id.placeDonutOrder);
+
         placeOrder.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * Display toast message when the order is placed and add the object to be added to
+             * current order array list and update prices
              * @param view
              */
             @Override
@@ -81,8 +93,8 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
                 donut = new Donut(donutName.getText().toString(), quantity);
 
                 orderObj.add(donut);
-
-                OrderActivity.tempSubtotal += Double.parseDouble(String.valueOf(getValue()));
+                donut.itemPrice();
+                OrderActivity.tempSubtotal += donut.getItemPrice();
                 OrderActivity.arrayList.add(donut.toString());
             }
         });
@@ -90,7 +102,8 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
     }
 
     /**
-     *
+     * This void method calculates the total for donuts based on the count and then sets it
+     * to our textInputLayout property for correct price for the donuts selected
      * @param parent
      * @param view
      * @param position
@@ -108,11 +121,11 @@ public class DonutOrderActivity extends AppCompatActivity implements AdapterView
     }
 
     /**
-     *
+     * Upon creation, if the quantity or donut is not selected then set the total for donuts to be exactly 0.00
      * @param parent
      */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        donutTotal.setText(twoDecimalPoints(0.00));
+        donutTotal.setText(twoDecimalPoints(default_value_donuts));
     }
 }

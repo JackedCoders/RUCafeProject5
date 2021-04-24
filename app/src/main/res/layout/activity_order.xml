@@ -10,11 +10,11 @@
         android:id="@+id/imageView3"
         android:layout_width="192dp"
         android:layout_height="146dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
         android:contentDescription="@string/currentOrder_picture"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/currentorderproject5" />
@@ -23,12 +23,13 @@
         android:id="@+id/textView4"
         android:layout_width="173dp"
         android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/current_order_label"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/currentOrderList"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
 
     <ListView
         android:id="@+id/currentOrderList"
@@ -40,24 +41,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/removeOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/remove_order_text"
-        app:layout_constraintEnd_toStartOf="@+id/placeCurrentOrder"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
-
-    <Button
         android:id="@+id/placeCurrentOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="4dp"
         android:text="@string/place_order_button"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout4"
@@ -103,5 +94,15 @@
             android:layout_height="wrap_content"
             android:hint="@string/total_activity_order" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="176dp"
+        android:layout_height="86dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/remove_order_helper_title"
+        app:layout_constraintBottom_toTopOf="@+id/currentOrderList"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

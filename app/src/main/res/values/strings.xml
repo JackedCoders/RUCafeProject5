@@ -33,8 +33,9 @@
     <string name="order_activity_title">View Shopping Cart</string>
     <string name="store_order_activity_title">View All Orders</string>
     <string name="donut_order_activity_title">Select Donut(s) Quantity</string>
-    <string name="main_activity_title">Select Donut(s) Quantity</string>
+    <string name="main_activity_title">Rutgers Cafeteria</string>
     <string name="reset_button_text">RESET ALL</string>
+    <string name="remove_order_helper_title">Click on the individual order to delete and then confirm!</string>
     <string-array name="quantity">
         <item>1</item>
         <item>2</item>
